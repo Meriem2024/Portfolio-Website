@@ -1,0 +1,47 @@
+<div class="main-content">
+    <div class="headline-content" data-aos="fade-left">
+        <div class="headline">
+            <div class="left-section">
+                <div class="empty"></div>
+                <div class="short-line"></div>
+            </div>
+            <h2>Portfolio</h2>
+            <div class="right-section">
+                <div class="long-line"></div>
+            </div>
+        </div>
+        <span>{{ "portfolio.title" | translate }}</span>
+    </div>
+    <img class="shade" [ngStyle]="{ 'left': '0' }" src="./../../../../assets/img/shades/portleft.png">
+
+    <div [ngStyle]="{ 'padding-top': '160px' }">
+        <div class="content" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000"
+            data-aos-easing="ease-in-out" *ngFor="let project of projects; let i = index" [ngStyle]="{
+            'flex-direction': i % 2 === 0 ? 'row' : 'row-reverse'
+          }">
+
+            <img [src]="'./assets/img/' + project.img" [alt]="project['name']">
+
+            <div class="right-content" [ngStyle]="{
+            'align-items': i % 2 === 0 ? 'start' : 'end'
+          }">
+                <div class="text-section" [ngStyle]="{
+                'align-items': i % 2 === 0 ? 'start' : 'end'
+              }">
+                    <h2>{{ project.name }}</h2>
+                    <h3>{{ project.tech }}</h3>
+                    <span [ngStyle]="{'text-align': i % 2 === 0 ? 'start' : 'end'}">{{ (project.descriptionKey |
+                        translate) }}</span>
+
+                </div>
+                <div class="btns">
+                    <a href="{{ project.link }}" target="_blank" class="live">Live test</a>
+                    <a href="{{ project.git }}" target="_blank" class="git">Github</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <img class="shade right" src="./../../../../assets/img/shades/portright.png">
+</div>

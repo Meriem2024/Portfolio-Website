@@ -1,0 +1,21 @@
+<header>
+    <div class="bg">
+        <nav>
+            <a href="#"><img src="./../../../assets/img/logo.png" alt="Logo"></a>
+            <div class="style-close-btn">
+                <img (click)="closeBurger()" src="./../../../assets/img/icon/close.png">
+            </div>
+        </nav>
+        <div id="mobile-burger">
+            <a href="#bout-me" (click)="closeBurger()" class="hover">{{ "aboutMe.me" | translate }}</a>
+            <a href="#skills" (click)="closeBurger()" class="hover">Skills</a>
+            <a href="#portfolio" (click)="closeBurger()" class="hover">Portfolio</a>
+            <a href="#contact" (click)="closeBurger()" class="hover">Contact</a>
+            <div>
+                <a (click)="changeLanguage('en')" [ngClass]="{'orange': languageService.english}">EN</a>
+                <p>|</p>
+                <a (click)="changeLanguage('de')" [ngClass]="{'orange': languageService.german}">DE</a>
+            </div>
+        </div>
+    </div>
+</header>

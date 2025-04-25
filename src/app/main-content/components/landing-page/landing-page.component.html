@@ -1,0 +1,25 @@
+<div class="center-max-width">
+    <div class="me">
+
+        <img class="img-section" src="./../../../../assets/img/me.png" alt="">
+
+
+
+        <div class="right-section">
+            <div>
+                <h3 [ngClass]="{'styleHeaderGerman': languageService.german}">{{ "landing.iAm" | translate }}</h3>
+
+                <div class="title">
+                    <h1>Meriem Weigert</h1>
+                    <h2>{{ "landing.title" | translate }}</h2>
+                </div>
+            </div>
+            <a href="#contact"><button>{{ "landing.talk" | translate }}</button></a>
+        </div>
+
+    </div>
+    <div class="shadow-section">
+        <img class="atf display" src="./../../../../assets/img/atf.png">
+        <img class="atf mobile" src="./../../../../assets/img/atf-mobile.svg">
+    </div>
+</div>

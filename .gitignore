@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+.angular/
+
+# VS Code & Editor config
+.vscode/
+.DS_Store
+
+# PHP-Backend-Dateien
+sendMail.php
+
+# Angular/Vite Cache/Build Info
+*.tsbuildinfo
+*.map
+
+# Env-Dateien & Logs
+*.env
+*.log

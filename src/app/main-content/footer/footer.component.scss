@@ -1,0 +1,164 @@
+@import "./../../../styles.scss";
+
+footer {
+  @include dFlex;
+  width: 100vw;
+  border-top: 4px solid $orange;
+
+  .footer {
+    @include dFlex($jc: space-between);
+    padding: 54px 100px;
+    width: 100%;
+    max-width: 1920px;
+
+    .copyright {
+      font-size: 23px;
+    }
+  }
+
+  .mobile-imprint {
+    display: none;
+  }
+}
+
+.logo-imprint {
+  @include dFlex($ai: start);
+  flex-direction: column;
+
+  a:first-child {
+    @include dFlex;
+
+    img {
+      width: 216px;
+    }
+  }
+
+  a:last-child {
+    // padding: 5px 5px;
+    padding: 5px 0px;
+    font-size: 16px;
+    color: whitesmoke;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.link-section {
+  @include dFlex($g: 42px);
+
+  a {
+    @include dFlex;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 23px;
+  }
+
+  img {
+    transition: transform 125ms ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.5);
+      transition: 125ms ease-in-out;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  footer {
+    .footer {
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    .desktop-imprint {
+      display: none;
+    }
+
+    .mobile-imprint {
+      display: block;
+      font-size: 16px;
+      color: whitesmoke;
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    .footer {
+      padding: 54px 80px;
+    }
+  }
+
+  .logo-imprint {
+    a:first-child {
+      img {
+        width: 190px;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .copyright {
+    font-size: 20px !important;
+  }
+
+  .logo-imprint {
+    a:first-child {
+      img {
+        width: 160px;
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  footer {
+    .footer {
+      padding: 48px 64px;
+    }
+  }
+
+  .copyright {
+    font-size: 18px !important;
+  }
+
+  .logo-imprint {
+    a:first-child {
+      img {
+        width: 140px;
+      }
+    }
+  }
+
+  .link-section {
+    img {
+      width: 24px;
+    }
+  }
+}
+
+@media (max-width: 325px) {
+  .copyright {
+    font-size: 16px !important;
+  }
+
+  .logo-imprint {
+    a:first-child {
+      img {
+        width: 80px;
+      }
+    }
+  }
+}

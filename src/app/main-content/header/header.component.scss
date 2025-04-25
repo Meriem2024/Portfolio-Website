@@ -1,0 +1,131 @@
+@import "./../../../styles.scss";
+
+header {
+  @include dFlex;
+  background-color: #141d2f;
+  max-height: 32px;
+  height: 100%;
+  padding: 40px 80px;
+  width: 100vw;
+  max-width: calc(100vw - 160px);
+  position: fixed;
+  left: 0;
+  z-index: 99;
+}
+
+nav {
+  @include dFlex($jc: space-between);
+  background-color: #141d2f;
+  width: 100%;
+  max-width: 1920px;
+
+  a {
+    @include dFlex;
+
+    img {
+      width: 150px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.orange {
+  color: $orange !important;
+}
+
+.language-btn {
+  @include dFlex($g: 4px);
+
+  .style-underline {
+    flex-direction: column;
+    gap: 0 !important;
+
+    .smallUnderline {
+      width: 24px !important;
+    }
+  }
+}
+
+div {
+  @include dFlex($g: 40px);
+  font-size: 23px;
+
+  a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding-bottom: 4px;
+
+    &:hover {
+      cursor: pointer;
+      color: $orange;
+      transition: 125ms;
+    }
+  }
+}
+
+.smallUnderline {
+  height: 3px;
+  background-color: $pink;
+  width: 56px;
+  border-radius: 4px;
+  margin-top: -3px;
+}
+
+.desktop-display {
+  height: 40px;
+}
+
+.mobile-display {
+  a {
+    display: none;
+    width: 30px !important;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 850px) {
+  .desktop-display {
+    display: none !important;
+  }
+
+  .mobile-display {
+    a {
+      display: flex !important;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 32px 72px;
+    max-width: calc(100vw - 142px);
+  }
+
+  nav {
+    a {
+      img {
+        width: 80px !important;
+      }
+    }
+  }
+
+  .mobile-display {
+    a {
+      width: 21px !important;
+
+      img {
+        width: 20px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  header {
+    padding: 32px 40px;
+    max-width: calc(100vw - 80px);
+  }
+}

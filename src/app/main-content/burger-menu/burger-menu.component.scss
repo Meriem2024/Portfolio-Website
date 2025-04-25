@@ -1,0 +1,124 @@
+@import "./../../../styles.scss";
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(20, 29, 47, 0.9);
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  nav {
+    @include dFlex($jc: space-between);
+    background-color: #141d2f;
+    z-index: 99;
+    max-height: 32px;
+    height: 100%;
+    padding: 40px 80px;
+    width: 100vw;
+    max-width: calc(100vw - 160px);
+
+    a {
+      @include dFlex;
+      img {
+        width: 150px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .style-close-btn {
+    @include dFlex;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  #mobile-burger {
+    @include dFlex($g: 40px);
+    flex-direction: column;
+    padding-top: 80px;
+    height: 50vh;
+    z-index: 9;
+    font-size: 23px;
+    a {
+      color: whitesmoke;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+        color: $orange;
+        transition: 125ms;
+      }
+    }
+
+    div {
+      @include dFlex($g: 4px);
+    }
+  }
+}
+
+.orange {
+  color: $orange !important;
+  // text-decoration: underline !important;
+  // text-decoration-color: $pink !important;
+  text-decoration-thickness: 3px !important;
+}
+
+.hover {
+  height: 24px;
+  color: whitesmoke;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 23px;
+  text-wrap: nowrap;
+
+  &:hover {
+    transition: ease-in-out 200ms;
+    color: $orange;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 40px;
+      background: $pink;
+      transition: ease-in-out 200ms;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .bg {
+    nav {
+      padding: 32px 72px;
+      max-width: calc(100vw - 142px);
+
+      a {
+        img {
+          width: 80px !important;
+        }
+      }
+    }
+  }
+
+  .style-close-btn {
+    width: 21px !important;
+
+    img {
+      width: 20px !important;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .bg {
+    nav {
+      padding: 32px 40px;
+      max-width: calc(100vw - 80px);
+    }
+  }
+}
